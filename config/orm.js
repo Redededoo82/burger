@@ -24,22 +24,23 @@ function objToSql(ob) {
 };
 
 
+// console.log('eeeeeeeeeeeeeeeeeee');
 
 //orm object to run selection/insert/update queries
 var orm = {
-
-	selectAll: function (tableInput, cb) {
-		var queryString = 'SELECT * FROM' + tableInput + ';';
+	
+	selectAll: function (table, cb) {
+		var queryString = "SELECT * FROM " + table + ";";
 		connection.query(queryString, function (err, res) {
 			if (err) {
 				throw err;
 			};
 			cb(res);
 		});
-
+		
 	},
 	insertOne: function (table, cols, vals, cb) {
-		var queryString = "INSERT INTO " + table;
+		var queryString = "INSERT INTO" + table;
 		queryString += " (";
 		queryString += cols.toString();
 		queryString += ") ";
