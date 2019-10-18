@@ -12,7 +12,7 @@
 <h2>Devoured burgers</h2>
  <ul>
         {{#each burgers}}
-        {{#if devoured}}
+        {{#if this.devoured}}
         <span><strong>{{this.id}} - {{this.burger_name}}</strong></span>
         {{/if}}
         {{/each}}
